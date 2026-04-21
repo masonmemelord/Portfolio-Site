@@ -1,0 +1,177 @@
+/* ================================================
+   Crash Bandicoot: Wrath of Cortex — Portfolio CSS
+   Bank Gothic · Deep navy · Warm orange · Teal
+   ================================================ */
+
+/* ── Option A: Bank Gothic (purchased/self-hosted) ── */
+@font-face {
+  font-family: 'Bank Gothic';
+  src: url('/fonts/BankGothic-Light-R...lar.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bank Gothic';
+  src: url('/fonts/bank gothic medium bt.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bank Gothic';
+  src: url('/fonts/BankGothic Md BT.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bank Gothic';
+  src: url('/fonts/BankGothic-Medium.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bank Gothic';
+  src: url('/fonts/BankGothic Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ── Option B: Rajdhani (free Google Fonts fallback) ── */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+  /* ── Palette ── */
+  --text:         #b8c4d0;
+  --text-h:        #e8edf2;
+  --bg:            #0e1a2b;
+  --border:        #1e3a5a;
+  --code-bg:       #080f1a;
+  --accent:        #c87d2a;
+  --accent-bg:     rgba(200,125,42,0.08);
+  --accent-border: rgba(200,125,42,0.4);
+  --teal:          #5bb8d4;
+  --gold:          #e8c97a;
+  --rust:          #d4845a;
+  --social-bg:     rgba(30,58,90,0.4);
+  --shadow:
+    rgba(0,0,0,0.5) 0 10px 15px -3px,
+    rgba(0,0,0,0.3) 0 4px 6px -2px;
+
+  /* ── Typography ──
+     Bank Gothic is a display font — keep body in system-ui
+     for readability at paragraph sizes.               */
+  --sans:    system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Bank Gothic', 'Rajdhani', 'Arial Narrow', sans-serif;
+  --mono:    ui-monospace, Consolas, monospace;
+
+  font:             18px/145% var(--sans);
+  letter-spacing:   0.18px;
+  color-scheme:     dark;
+  color:            var(--text);
+  background:       var(--bg);
+  font-synthesis:   none;
+  text-rendering:   optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  @media (max-width: 1024px) { font-size: 16px; }
+}
+
+#root {
+  width:          1126px;
+  max-width:      100%;
+  margin:         0 auto;
+  text-align:     left;
+  border-inline:  1px solid var(--border);
+  padding:        2.5% 5% 5%;
+  min-height:     100svh;
+  display:        flex;
+  flex-direction: column;
+  box-sizing:     border-box;
+}
+
+header { padding-bottom: 2.5%; }
+
+footer {
+  text-align:     center;
+  font-family:    var(--heading);
+  font-size:      12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color:          #3a5a72;
+  border-top:     1px solid var(--border);
+  padding-top:    1.5rem;
+}
+
+body { margin: 0; }
+
+h1, h2 {
+  font-family:    var(--heading);
+  font-weight:    500;   /* Bank Gothic reads heavy — keep at medium */
+  text-transform: uppercase;
+  color:          var(--text-h);
+}
+
+h1 {
+  font-size:      56px;
+  letter-spacing: 4px;   /* wide tracking = Bank Gothic signature */
+  margin:         32px 0;
+  color:          var(--accent);
+  line-height:    1.05;
+
+  @media (max-width: 1024px) {
+    font-size:      36px;
+    letter-spacing: 2px;
+    margin:         20px 0;
+  }
+}
+
+h2 {
+  font-size:      24px;
+  letter-spacing: 3px;
+  line-height:    118%;
+  margin:         0 0 8px;
+  color:          var(--teal);
+
+  @media (max-width: 1024px) {
+    font-size:      20px;
+    letter-spacing: 2px;
+  }
+}
+
+p {
+  margin: 0;
+  font-family: var(--heading);
+  font-weight: 300; /* use the Light variant for body */
+  letter-spacing: 1px;
+}
+
+a {
+  color:                var(--gold);
+  text-decoration:      underline;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--teal); }
+
+code, .counter {
+  font-family:   var(--mono);
+  display:       inline-flex;
+  border-radius: 4px;
+  color:         var(--gold);
+}
+
+code {
+  font-size:   15px;
+  line-height: 135%;
+  padding:     4px 8px;
+  background:  var(--code-bg);
+  border:      1px solid var(--border);
+}
