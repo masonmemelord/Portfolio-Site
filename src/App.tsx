@@ -4,6 +4,7 @@ import './index.css';
 import resume from './assets/CS-Focused-Resume.pdf'
 
 
+
 // Define the shape of a Project
 
 
