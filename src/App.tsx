@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Terminal } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import './index.css';
 import resume from './assets/CS-Focused-Resume.pdf'
 
