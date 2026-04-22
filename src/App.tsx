@@ -44,7 +44,17 @@ const projects: Project[] = [
   }
 ];
 
-const App: React.FC<PreviewerProps> = () => {
+
+const App: React.FC<PreviewerProps> = ({ fileUrl, fileType }) => {
+  if (!fileUrl || !fileType) {
+    console.error("Missing props!");
+    return (
+      <div style={{ padding: '20px', color: 'red' }}>
+        <h2>Configuration Error</h2>
+        <p>File URL or Type is missing. Check main.tsx!</p>
+      </div>
+    );
+  }
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
       {/* Header / Hero Section */}
