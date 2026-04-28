@@ -2,6 +2,8 @@ import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import './index.css';
 import resume from './assets/CS-Focused-Resume.pdf'
+import profilePic from './assets/profile.jpeg';
+
 
 
 
@@ -65,7 +67,7 @@ const App: React.FC<PreviewerProps> = ({ fileUrl, fileType }) => {
         <p className="text-xl text-slate-600 max-w-2xl leading-relaxed">
           Majoring in Computer Science at Tulane University. <i>C.o. 2028</i>
         </p>
-        <img src='./src/assets/profile.jpeg' style = {{float: 'right', marginLeft: '15px', width: '25%', paddingLeft: '2.5%', borderRadius: '20px'}}></img>
+        <img src={profilePic} style = {{float: 'right', marginLeft: '15px', width: '25%', paddingLeft: '2.5%', borderRadius: '20px'}}></img>
       </header>
 
       {/* Projects Grid */}
