@@ -28,14 +28,16 @@ const projects: Project[] = [
   {
     title: "Greenlab AI Cell Detection App",
     description: "A lightweight, full-stack application utilizing deep-learning to detect hematopoietic cell colonies.",
-    techStack: ["Next.js, ", "TypeScript, ", "Firebase, ", "TailwindCSS, ", "Python"],
+    techStack: ["Next.js, ", "TypeScript, ", "Supabase, ", "Roboflow, ", "Python, ", "Docker"],
+    link: "https://greenlab-frontend.vercel.app",
     github: "https://github.com/masonmemelord/Greenlab_Cell_App",
   },
   {
     title: "Proxify LLC",
     description: "Currently building a scalable IaaS proxy designed to handle network requests and dynamic IP rotation.",
-    techStack: ["Python, ", "Docker, ", "Linux, "],
+    techStack: ["Next.js, ", "Python, ", "Docker, ", "Linux"],
     link: "https://proxifyllc.com",
+    github: "https://github.com/masonmemelord/Proxify-LLC"
   },
   {
     title: "Auditorials",
