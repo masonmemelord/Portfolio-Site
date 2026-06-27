@@ -32,11 +32,10 @@ const projects: Project[] = [
     github: "https://github.com/masonmemelord/Greenlab_Cell_App",
   },
   {
-    title: "Gifts From Rah",
-    description: "Currently redesigning a fullstack storefront website for my uncle's business (in progress).",
-    techStack: ["React, ", "Node.js, ", "TypeScript, ", "(Currently a HTML/CSS/JS stack)"],
-    link: "https://www.gifts-from-rah.com/",
-    github: "https://github.com/masonmemelord/GiftsFromRah"
+    title: "Proxify LLC",
+    description: "Currently building a scalable IaaS proxy designed to handle network requests and dynamic IP rotation.",
+    techStack: ["Python, ", "Docker, ", "Linux, "],
+    link: "https://proxifyllc.com",
   },
   {
     title: "Auditorials",
