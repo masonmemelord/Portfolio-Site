@@ -1,23 +1,13 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ArrowUpRight, Code, FileDown, Link, MapPin } from 'lucide-react';
 import './index.css';
-import resume from './assets/CS-Focused-Resume.pdf'
+import resume from './assets/CS-Focused-Resume.pdf';
 import profilePic from './assets/profile.jpeg';
-
-
-
-
-// Define the shape of a Project
-
-
-
-interface PreviewerProps {
-  fileUrl: string;
-  fileType: 'pdf' | 'image' | 'text';
-}
 
 interface Project {
   title: string;
+  type: string;
+  year: string;
   description: string;
   techStack: string[];
   link?: string;
@@ -26,112 +16,142 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Greenlab AI Cell Detection App",
-    description: "A lightweight, full-stack application utilizing deep-learning to detect hematopoietic cell colonies.",
-    techStack: ["Next.js, ", "TypeScript, ", "Supabase, ", "Roboflow, ", "Python, ", "Docker"],
-    link: "https://greenlab-frontend.vercel.app",
+    title: 'Greenlab AI Cell Detection',
+    type: 'Computer Vision',
+    year: '2026',
+    description:
+      'Full-stack cell colony detection workflow that turns model output into a usable lab-facing product.',
+    techStack: ['Next.js', 'TypeScript', 'Supabase', 'Roboflow', 'Python', 'Docker'],
+    link: 'https://greenlab-frontend.vercel.app',
   },
   {
-    title: "Proxify LLC",
-    description: "Currently building a scalable IaaS proxy designed to handle network requests and dynamic IP rotation.",
-    techStack: ["Next.js, ", "Python, ", "Docker, ", "Linux"],
-    link: "https://proxifyllc.com",
+    title: 'Proxify LLC',
+    type: 'Infrastructure',
+    year: '2026',
+    description:
+      'IaaS proxy platform focused on dynamic IP rotation, request routing, and network automation.',
+    techStack: ['Next.js', 'Python', 'Docker', 'Linux'],
+    link: 'https://proxifyllc.com',
   },
   {
-    title: "Auditorials",
-    description: "Designing and architecting an online newsletter and forum my love of music (starting Summer '26).",
-    techStack: ["React, ", "Next.js, ", "TypeScript, "],
-    github: "https://github.com/masonmemelord/website-project/tree/main/1600-website-project/public"
-  }
+    title: 'Auditorials',
+    type: 'Consumer Media',
+    year: '2026',
+    description:
+      'Music newsletter and forum concept designed around curation, distribution, and repeat community loops. My first project too!',
+    techStack: ['React', 'Next.js', 'TypeScript'],
+    github: 'https://github.com/masonmemelord/website-project/tree/main/1600-website-project/public',
+  },
 ];
 
-
-const App: React.FC<PreviewerProps> = ({ fileUrl, fileType }) => {
-  if (!fileUrl || !fileType) {
-    console.error("Missing props!");
-    return (
-      <div style={{ padding: '20px', color: 'red' }}>
-        <h2>Configuration Error</h2>
-        <p>File URL or Type is missing. Check main.tsx!</p>
-      </div>
-    );
-  }
+const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
-      {/* Header / Hero Section */}
-      <header className="max-w-5xl mx-auto px-6 py-20">
-        <h1 className="text-5xl font-extrabold mb-6 tracking-tight">
-          Mason Mitchell
-        </h1>
-        <p className="text-xl text-slate-600 max-w-2xl leading-relaxed">
-          Majoring in Computer Science at Tulane University. <i>C.o. 2028</i>
-        </p>
-        <img src={profilePic} style = {{float: 'right', marginLeft: '15px', width: '25%', paddingLeft: '2.5%', borderRadius: '20px'}}></img>
+    <div className="page-shell">
+      <header className="system-header">
+        <a className="brand-lockup" href="#top" aria-label="Mason Mitchell portfolio home">
+          <span>Mason Mitchell</span>
+        </a>
+        <nav className="system-nav" aria-label="Primary navigation">
+          <a href="#work">Work</a>
+          <a href="#profile">Profile</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </header>
 
-      {/* Projects Grid */}
-      <main className="max-w-5xl mx-auto px-6 py-12">
-        <div>
-          
-          <h2>Who am I?</h2>
-          <p>My name is Mason Mitchell. I was born and raised in Compton, CA and technology has been an integral part of my life.
-            I got my first introduction to programming in 2020 when I joined <a href='https://www.hiddengeniusproject.org/'>The Hidden Genius Project</a>.
-            Since then, for better and for worse I've immersed myself into all things tech. I got some pretty cool projects linked below and my resume,
-            so feel free to take a look!
+      <main id="top">
+        <section className="hero-section" aria-labelledby="hero-title">
+          <div className="hero-copy">
+            <p className="menu-label">Majoring in Computer Science and InfoTech @ Tulane </p>
+            <h1 id="hero-title">Who am I?</h1>
+            <p>
+              My name is Mason Mitchell. I'm a rising junior majoring in Computer Science with a minor in IT at Tulane. 
+              I was born and raised in the Los Angeles area and am currently working on a lot of projects. Feel free to
+              take a look. I'm always on a device so don't be afraid to reach out either!
+            </p>
+            <div className="action-row">
+              <a className="primary-link" href="#work">
+                Browse work
+                <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
+              <a href={resume} download="Mason_Mitchell_Resume.pdf">
+                Resume
+                <FileDown size={16} aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+
+          <figure className="preview-window">
+            <img src={profilePic} alt="Abstract profile photograph for Mason Mitchell" />
+            <figcaption>
+              <span>Memory Card</span>
+              <strong>Slot 01</strong>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section className="profile-strip" id="profile" aria-label="Profile summary">
+          <p>
+            <MapPin size={15} aria-hidden="true" />
+            Los Angeles, CA / New Orleans, LA
           </p>
-        </div>
-        <div className="preview-container" style={{paddingTop: "2.5%"}}>
-          <h2 >
-            <a href={resume} download="Mason_Mitchell_Resume.pdf" className="download-btn"> 
-              My Resume!
-              </a> 
-            </h2>
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold mb-8 border-b pb-2" style={{paddingTop: "2.5%"}}>Technical Projects</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <p>I first started programming at The Hidden Genius Project in 2020.</p>
+          <p>Interested in tech innovation, global economics, and martial arts.</p>
+        </section>
+
+        <section className="work-browser" id="work" aria-labelledby="work-title">
+          <div className="browser-title">
+            <p className="menu-label">Selected Work</p>
+            <h2 id="work-title">Project Browser</h2>
+          </div>
+
+          <div className="project-list">
             {projects.map((project, index) => (
-              <div key={index} className="group bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-xl transition-all">
-                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                <p className="text-slate-600 mb-6 leading-snug">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.techStack.map((tech) => (
-                    <span key={tech} className="tech-tag bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs">
-                      {tech}
-                    </span>
-                  ))}
+              <article className="project-row" key={project.title}>
+                <div className="project-index">{String(index + 1).padStart(2, '0')}</div>
+                <div className="project-main">
+                  <div className="project-heading">
+                    <h3>{project.title}</h3>
+                    <span>{project.type}</span>
+                  </div>
+                  <p>{project.description}</p>
+                  <ul aria-label={`${project.title} technology stack`}>
+                    {project.techStack.map((tech) => (
+                      <li key={tech}>{tech}</li>
+                    ))}
+                  </ul>
                 </div>
-
-                <div className="flex gap-4">
-                  {project.github && (
-                    <a href={project.github} className="tech-tag bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs">
-                      <a/> GitHub
-                    </a>
-                  )}<br></br>
-                  {project.link && (
-                    <a href={project.link} className="flex items-center gap-1 text-sm font-medium hover:text-blue-600">
-                      Link <ExternalLink /> 
-                    </a>
-                  )}
+                <div className="project-meta">
+                  <span>{project.year}</span>
+                  <div>
+                    {project.link && (
+                      <a href={project.link} target="_blank" rel="noreferrer" aria-label={`${project.title} live link`}>
+                        <ArrowUpRight size={17} aria-hidden="true" />
+                      </a>
+                    )}
+                    {project.github && (
+                      <a href={project.github} target="_blank" rel="noreferrer" aria-label={`${project.title} GitHub`}>
+                        <Code size={17} aria-hidden="true" />
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
-        </div>
-        
-
-
+        </section>
       </main>
 
-      {/* Footer */}
-      <footer className="max-w-5xl mx-auto px-6 py-20 text-slate-400 text-sm flex justify-between items-center">
-        <p>© {new Date().getFullYear()} — Built with React & TSX</p>
-        <div className="flex gap-6">
-          <a href="https://www.linkedin.com/in/mason-mitchell-355510309/" className="hover:text-slate-900 transition-colors">LinkedIn </a>
-          <a href="https://github.com/masonmemelord" className="hover:text-slate-900 transition-colors">GitHub</a>
+      <footer className="site-footer" id="contact">
+        <p>React / TypeScript / Console menu energy</p>
+        <div>
+          <a href="https://www.linkedin.com/in/mason-mitchell-355510309/" target="_blank" rel="noreferrer">
+            <Link size={16} aria-hidden="true" />
+            LinkedIn
+          </a>
+          <a href="https://github.com/masonmemelord" target="_blank" rel="noreferrer">
+            <Code size={16} aria-hidden="true" />
+            GitHub
+          </a>
         </div>
       </footer>
     </div>

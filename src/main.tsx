@@ -5,7 +5,6 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App fileUrl="https://example.com/sample.pdf" 
-  fileType="pdf"/>
+    <App />
   </StrictMode>,
 )
