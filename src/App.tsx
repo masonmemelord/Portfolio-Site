@@ -39,7 +39,7 @@ const projects: Project[] = [
     year: '2026',
     description:
       'Semi-serious health and wellness app for college students designed to reduce friction, build momentum, and increase productivity.',
-    techStack: ['Swift', 'iOS'],
+    techStack: ['Swift', 'SwiftUI', 'Firebase'],
     github: 'https://github.com/masonmemelord/Unstuck-iOS',
   },
 ];
