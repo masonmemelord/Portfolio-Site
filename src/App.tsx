@@ -34,13 +34,13 @@ const projects: Project[] = [
     link: 'https://proxifyllc.com',
   },
   {
-    title: 'Auditorials',
-    type: 'Consumer Media',
+    title: 'Unstuck iOS',
+    type: 'Health / Wellness',
     year: '2026',
     description:
-      'Music newsletter and forum concept designed around curation, distribution, and repeat community loops. My first project too!',
-    techStack: ['React', 'Next.js', 'TypeScript'],
-    github: 'https://github.com/masonmemelord/website-project/tree/main/1600-website-project/public',
+      'Semi-serious health and wellness app for college students designed to reduce friction, build momentum, and increase productivity.',
+    techStack: ['Swift', 'iOS'],
+    github: 'https://github.com/masonmemelord/Unstuck-iOS',
   },
 ];
 
