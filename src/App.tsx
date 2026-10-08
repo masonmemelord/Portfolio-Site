@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowUpRight, Code, FileDown, Link, MapPin } from 'lucide-react';
 import './index.css';
-import resume from './assets/CS-Focused-Resume.pdf';
+import resume from './assets/CSResume.pdf';
 import profilePic from './assets/profile.jpeg';
 
 interface Project {
@@ -21,8 +21,8 @@ const projects: Project[] = [
     year: '2026',
     description:
       'Full-stack cell colony detection workflow that turns model output into a usable lab-facing product.',
-    techStack: ['Next.js', 'TypeScript', 'Supabase', 'Roboflow', 'Python', 'Docker'],
-    link: 'https://greenlab-frontend.vercel.app',
+    techStack: ['Python', 'Roboflow', 'YOLO'],
+    github: 'https://github.com/masonmemelord/Greenlab',
   },
   {
     title: 'Proxify LLC',
@@ -30,17 +30,17 @@ const projects: Project[] = [
     year: '2026',
     description:
       'IaaS proxy platform focused on dynamic IP rotation, request routing, and network automation.',
-    techStack: ['Next.js', 'Python', 'Docker', 'Linux'],
+    techStack: ['Python', 'Tailscale', '3proxy'],
     link: 'https://proxifyllc.com',
   },
   {
-    title: 'Unstuck iOS',
-    type: 'Health / Wellness',
+    title: 'ResearchBridge',
+    type: 'Research Discovery',
     year: '2026',
     description:
-      'Semi-serious health and wellness app for college students designed to reduce friction, build momentum, and increase productivity.',
-    techStack: ['Swift', 'SwiftUI', 'Firebase'],
-    github: 'https://github.com/masonmemelord/Unstuck-iOS',
+      'An AI-assisted research discovery platform connecting students with professors and opportunities based on interests, skills, and academic fit—starting at Tulane and built to scale across universities',
+    techStack: ['Next.Js', 'Python', 'Supabase'],
+    github: 'https://github.com/masonmemelord/ResearchBridge',
   },
 ];
 
@@ -81,7 +81,7 @@ const App: React.FC = () => {
           </div>
 
           <figure className="preview-window">
-            <img src={profilePic} alt="Abstract profile photograph for Mason Mitchell" />
+            <img src={profilePic} alt="Mason Mitchell working on a laptop" />
             <figcaption>
               <span>Memory Card</span>
               <strong>Slot 01</strong>
@@ -114,11 +114,13 @@ const App: React.FC = () => {
                     <span>{project.type}</span>
                   </div>
                   <p>{project.description}</p>
-                  <ul aria-label={`${project.title} technology stack`}>
-                    {project.techStack.map((tech) => (
-                      <li key={tech}>{tech}</li>
-                    ))}
-                  </ul>
+                  {project.techStack.length > 0 && (
+                    <ul aria-label={`${project.title} technology stack`}>
+                      {project.techStack.map((tech) => (
+                        <li key={tech}>{tech}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
                 <div className="project-meta">
                   <span>{project.year}</span>
